@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Thesis by xcodevn</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/xcodevn/thesis">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/xcodevn/thesis/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/xcodevn/thesis/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Thesis</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/xcodevn">xcodevn</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="interactive-verification-and-speed-up-techniques" class="anchor" href="#interactive-verification-and-speed-up-techniques"><span class="octicon octicon-link"></span></a>INTERACTIVE VERIFICATION AND SPEED UP TECHNIQUES</h1>
+
+<h2>
+<a name="abstract" class="anchor" href="#abstract"><span class="octicon octicon-link"></span></a>Abstract</h2>
+
+<p>Việc chứng minh tính đúng đắn của một chương trình là 
+một công việc khó khăn, vì vậy mà hiện nay máy tính 
+vẫn chưa thể tự động hoàn toàn trong việc chứng minh 
+các chương trình lớn. Điều này dẫn tới việc đòi hỏi 
+có sự tương tác giữa người với máy trong những chứng minh phức tạp.</p>
+
+<p>Luận văn này hiện thực ý tưởng về <em>interactive 
+verification</em>, là sự tương tác giữa người và chương 
+trình máy tính để chứng minh một chương trình nào đó 
+thỏa mãn chính chất cần thiết. Với việc sử dụng 
+<em>rewriting term</em>, hệ thống Leon footnote: Leon la he thong chung 
+minh tu dong, cho phep chung minh tinh dung dan cung nhu tim ra cac 
+phan vi du cua chuong trinh viet bang ngon ngu Scala] đã có thể 
+tạo ra sự tương tác hai chiều với người dùng trong qua 
+trinh chung minh. Nguoi dung co the thay duoc cac muc tieu can chung 
+minh hien tai, sau do cung cap cho he thong nhung lemmas moi va lap lai 
+qua trinh tren cho toi khi chung minh duoc hoan chinh.</p>
+
+<p>Bên cạnh đó, luận văn còn đề cập tới tốc độ của 
+quá trình chứng minh tương tác này, một loạt các kỹ 
+thuật đã được áp dụng nhằm cải tiến tốc độ của 
+hệ thống. Có thể kể đến ba nổ lực chính: (1) áp 
+dụng một bộ lọc sử dụng tri thức của hệ thống và 
+học máy để lọc bỏ những phần thừa của quá trình 
+tính toán, (2) kĩ thuật profiling được áp dụng nhằm phát 
+hiện những mắc xích chiếm lượng lớn thời gian tính 
+toán, từ đó mà tập trung cải thiện tốc độ của các 
+phần này, (3) thực hiện việc song song hóa quá trình chứng minh.</p>
+
+<p>Dựa vào những kĩ thuật trên, luận văn đã đạt được 
+một sự cải thiện rõ rệt về tốc độ của hệ thống. 
+Qua đo lường tốc độ chứng minh đã tăng xấp xĩ <strong>30 
+lần</strong> so với phiên bản hiện thực ban đầu.</p>
+
+<p>Bên cạnh những kết quả đạt được trên, bản thân tác 
+giả cũng gặt hái được những kinh nghiệm quý báu trong 
+quá trình làm luận văn, nhất là kinh nghiệm trong quy trình 
+hiện thực hệ thống và trong việc đảm bảo chất 
+lượng cũng như tính ổn định của hệ thống được hiện thực.</p>
+
+<h2>
+<a name="acknowledgement" class="anchor" href="#acknowledgement"><span class="octicon octicon-link"></span></a>Acknowledgement</h2>
+
+<p>Toi gửi lời cảm ơn chân thành đến phó giáo sư tiến sĩ 
+Quản Thành Thơ, phó giáo sư tiến sĩ Viktor Kuncak đã có 
+những góp ý quan trọng và định hướng cho luận văn này.</p>
+
+<p>Toi cũng muốn gửi lời cảm ơn của mình đến anh Hoàng 
+Lê Nghĩa Đức, là người đã theo sát, tan tinh huong dan 
+trong thời gian toi làm luận văn.</p>
+
+<p>Và trên tất cả, luận văn này dành cho gia đình của tôi, 
+nhất là người mẹ đã luôn chăm sóc và dõi theo tôi.</p>
+
+<p>Gửi lời tưởng nhớ đến thầy Dương Công Vinh, người 
+đã dắt tôi đi những bước đi chập chững trên con 
+đường den voi ngành Khoa học máy tính.</p>
+
+<h2>
+<a name="%C4%90%C3%B3ng-g%C3%B3p-c%E1%BB%A7a-lu%E1%BA%ADn-v%C4%83n" class="anchor" href="#%C4%90%C3%B3ng-g%C3%B3p-c%E1%BB%A7a-lu%E1%BA%ADn-v%C4%83n"><span class="octicon octicon-link"></span></a>Đóng góp của luận văn</h2>
+
+<p>Luận văn đã mở rộng khả năng của hệ thống Leon hiện 
+tại. Cho phép Leon hỗ trợ việc chứng minh tương tác, ho 
+tro cac lemmas trong qua trinh chung minh, từ đó cho phép Leon có 
+thể chứng minh những tính chất mà trước kia không thể 
+chứng minh được hoac phai chung minh thu cong.</p>
+
+<p>Luận văn cũng nêu lên ý tưởng về interactive learnining, 
+trong đó cho phép giải thuật học máy có thể học từ 
+chính quá trình sử dụng hệ thống của người dùng.</p>
+
+<p>Với những nổ lực trong việc cải thiện tốc độ, hệ 
+thống Leon đã có thể thực hiện song song hóa quá trình 
+chứng minh. Cải thiện đáng kể thời gian nguoi dung phai doi 
+trong qua trinh tuong tac.</p>
+
+<p>Việc sử dụng bộ lọc hoc may không chỉ có tác dụng 
+tăng tốc cho hệ thống Leon, mà bộ lọc còn có thể 
+được sử dụng trong các trường hợp tương tự. Ví dụ 
+như bo loc nay se la mot phan tien xu ly cho de tai: "...."</p>
+
+<p>Và không thể không nhắc tới việc trong quá trình làm 
+luận văn này, tác giả đã sửa được một lỗi tồn 
+tại trong một thời gian dài bên trong nhân của hệ thống Leon.</p>
+
+<p>Bên cạnh đó, trong thời gian rãnh rỗi của mình, tác giả 
+cũng đã thiết kế mau sac cho mot giao dien moi cho hệ thống 
+Leon trên nền web. Tuy khối lượng công việc là nhỏ, 
+nhưng day cũng co the coi là một thói quen có ích trong thời 
+gian rãnh rỗi.</p>
+
+<h2>
+<a name="table-of-contains" class="anchor" href="#table-of-contains"><span class="octicon octicon-link"></span></a>Table of contains</h2>
+
+<h2>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>Trước tiên nói về Leon, Leon là một chương trình chứng minh tự động được phát triển bởi nhóm nghiên cứu LARA tại đại học EPFL, Thụy Sĩ. Điểm mạnh của Leon là cho phép người lập trình dùng chính ngôn ngữ Scala cho việc đặc tả những tính chất của chương trình Scala, Leon có thể phát hiện ra các phản ví dụ trong trường hợp có sự sai khác giữa đặc tả và hiện thực.</p>
+
+<p>Về nguyên tắc, Leon thực hiện việc chứng minh trên môn ngôn ngữ gọi là PureScala. Ngôn ngữ này chỉ hỗ trợ các hàm không có hiệu ứng lề (thuần hàm) và yêu cầu các hàm này phải là hàm bậc nhất (không nhận một hàm khác như là tham số, cũng như không trả về một hàm) và chỉ hỗ trợ các kiểu dữ liệu đơn giản (số nguyên, kiểu dữ liệu trừu tượng, tập hợp, tuples)</p>
+
+<p>Leon hoạt động dựa trên một ý tưởng đơn giản là Unrolling. Để chứng minh một biểu thức thỏa một tính chất nào đó, với những hàm không đệ quy trong biểu thức, ta có thể thực hiện đơn giản bởi việc thay lời gọi hàm bằng thân của hàm này đã được thay các biến bởi các tham số truyền theo. Đối với các hàm gọi chính nó (hàm đệ quy) Leon cũng thực hiện tương tự, nhưng kết quả cho mỗi lần Unrolling, ta chỉ được một phiên bản xấp xỉ với hàm đệ qui. Dựa vào việc Xấp xĩ cận dưới (một xấp xĩ mà nếu hàm này trả về là sai với đặc tả thì hàm đệ quy cũng sai với đặc tả), và Xấp xĩ cận trên (một xấp xĩ mà nếu hàm này trả về là đúng với đặc tả thì hàm đệ quy cũng đúng với đặc tả) ta có thể thoát ra khỏi quá trình Unrolling vô tận và vẫn đảm bảo tính đúng đắn của chứng minh (hoặc phản ví dụ). Nói một cách ngắn gọn việc chứng minh một tính chất của một biểu thức ta thực hiện chứng minh trên các xấp xĩ trên và xấp xĩ dưới của biểu thức này. </p>
+
+<p>Tuy nhiên, hệ thống Leon hiện tại hỗ trợ rất kém trong việc chứng minh một tính chất của chương trình bằng cách sử dụng các bổ đề kèm theo. Một sự thật rằng đa phần các chứng minh luôn cần những bồ đề kèm theo. Có thể giải thích việc này nếu coi Leon là một hệ thống chứng minh diễn dịch, nói cách khác, thông thường Leon sẽ không thể thực hiện việc chứng minh qui nạp nếu không có sử tương tác với người dùng. Chính các bổ đề sẽ lấp đầy mắc xích trống, các bổ đề sẽ nhận nhiệm vụ chứng minh qui nạp.</p>
+
+<p>Việc hỗ trợ các bổ đề trong hệ thống Leon rất hạn chế, phụ thuộc lớn vào cơ chế của solver (Z3) bên dưới, gâp ra tình trạng solver timeout không thể tránh khỏi. Luận văn này đưa ra ý tưởng sử dụng rewriting term, để simplify biểu thức cần chứng minh trước khi đưa cho solver bên dưới. Nói một cách khác, ta chủ động sử dụng các bổ đề để đơn giản hóa biểu thức chứng minh. Với ý tưởng này, ta sẽ chủ động trong việc áp dụng các bổ đề trong quá trình chứng minh.</p>
+
+<p>Một cách đơn giản, quá trình simplify một biểu thức là quá trình biển đổi biểu thức về một dạng tương tương nhưng đơn giản hơn. Bằng việc sử dụng các <em>rewriting rules</em> có dạng <code>if cond then LHS = RHS</code> ta có thể thay vế trái <code>LHS</code> bằng vế phải <code>RHS</code> nếu <code>cond</code> được thỏa. Quá trình xem ra đơn giản này là một trong những cấu thành chính của các Interactive proof assistance (chẳng hạn Isabelle).</p>
+
+<p>Bằng việc chuyển đổi các bổ đề, định nghĩa hàm, giả thuyết quy nạp trở thành các <em>rewriting rules</em> ta có thể chứng minh một cách tự động những tính chất mà trước kia phải làm hoàn toàn bằng tay.</p>
+
+<p>Một trong những chú trọng của luận văn này là cải thiện thời gian chứng minh của Leon tới mới tối đa có thể. Có thể kể đến ba nỗ lực chính để đạt mục tiêu trên. </p>
+
+<p>Thứ nhất là việc sử dụng một bộ lọc nhằm lọc ra các <em>rewrite rules</em> không cần thiết cho quá trình chứng minh. Thực nghiệm cho thấy một số lượng rất ít các rules là cần thiết cho quá trình chứng minh. Để cải thiện tốc độ ta mong muốn lọc ra nhưng rules cần thiết và loại bỏ những rules thừa. Tất nhiên là hiệu năng mang lại phải lớn hơn phí tổn trong khi bộ lọc hoạt động. Bằng việc sử dụng thuật toán học máy Naive-Bayes, luận văn này hiện thực một bộ lọc có khả năng học được những tri thức từ quá trình chứng minh trước đó, hoặc những tri thức do người dùng đưa vào để cải thiện chất lượng của bộ lọc.</p>
+
+<p>Thứ hai là việc sử dụng kĩ thuật profiling, đây là một quy trình kép kín, profiling cho phép phát hiện những bộ phận trong hệ thống chiếm phần lớn tài nguyên máy tính (CPU hay RAM) từ đó chúng ta tập trung cải tiến những phần quan trọng này. Quy trình này được lập lại, và mỗi lần lặp tốc độ của hệ thống lại được cải thiện.</p>
+
+<p>Nỗ lực thứ ba để đẩy tốc độ của hệ thống và có lẽ là nhân tố quan trọng nhất đó là thực hiện song song hóa hệ thống hiện tại. Ý tưởng đơn giản là ta có thể chứng minh các tính chất của chương trình một cách song song, độc lập với nhau. Chỉ với nỗ lực này, kết quả đạt được là hệ thống có thể mở rộng tới mức tối đa.</p>
+
+<p>Ở phần cuối của luận văn, tác giả cũng đề cập tới qui trình hiện thực toàn bộ luận văn sử dụng công cụ quản lý dự án Github cũng như git cho chức năng quản lý mã nguồn, mà theo ý tưởng của tác giả là điều này nằm ngoài những kiến thức đã được dạy ở giảng đường. Bên cạnh đó là kinh nghiệm của tác giả trong việc đảm bảo chất lượng cũng như tính ổn định của hệ thống thông qua việc thực hiện Regression testing và Tích hợp liên tục (CI - english please!)</p>
+
+<p>Phần tiếp theo sẽ đi vào chi tiết về interactive verification, các kĩ thuật tăng tốc được áp dung.</p>
+
+<h2>
+<a name="interactive-verification" class="anchor" href="#interactive-verification"><span class="octicon octicon-link"></span></a>Interactive verification</h2>
+
+<h2>
+<a name="advanced-speed-up-techniques" class="anchor" href="#advanced-speed-up-techniques"><span class="octicon octicon-link"></span></a>Advanced speed up techniques</h2>
+
+<h2>
+<a name="experiment-and-measurement" class="anchor" href="#experiment-and-measurement"><span class="octicon octicon-link"></span></a>Experiment and Measurement</h2>
+
+<h2>
+<a name="conclusion" class="anchor" href="#conclusion"><span class="octicon octicon-link"></span></a>Conclusion</h2>
+
+<h2>
+<a name="references" class="anchor" href="#references"><span class="octicon octicon-link"></span></a>References</h2>
+
+<h2>
+<a name="appendix-a---how-did-i-work-" class="anchor" href="#appendix-a---how-did-i-work-"><span class="octicon octicon-link"></span></a>Appendix A - How did I work ?</h2>
+
+<h2>
+<a name="appendix-b---regression-test-and-continuous-integration" class="anchor" href="#appendix-b---regression-test-and-continuous-integration"><span class="octicon octicon-link"></span></a>Appendix B - Regression test and Continuous integration</h2>
+
+<h2>
+<a name="appendix-c---leon-system" class="anchor" href="#appendix-c---leon-system"><span class="octicon octicon-link"></span></a>Appendix C - Leon system</h2>
+
+<h2>
+<a name="appendix-d---screen-shots" class="anchor" href="#appendix-d---screen-shots"><span class="octicon octicon-link"></span></a>Appendix D - Screen shots</h2>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
