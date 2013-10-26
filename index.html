@@ -227,9 +227,87 @@ tính ổn định của hệ thống thông qua việc thực hiện <em>regres
 
 <p>Trong phần tiếp theo, ta sẽ đi vào chi tiết của chiến lược đơn giản hóa. Đây cũng chính là cấu thành quan trọng nhất đối với <em>interactive verification</em>.</p>
 
-<h3 class="wmd-title" id="simlification">Simlification</h3>
+<h3 class="wmd-title" id="simplification">Simplification</h3>
 
-<h2 class="wmd-title" id="advanced-speed-up-techniques">Advanced speed up techniques</h2>
+<h3 class="wmd-title" id="rewrite-rules">Rewrite rules</h3>
+
+<p>Như vừa trình bày ở phần trên, ta đã có có được cỗ máy thực hiện quá trình đơn giản hóa, tuy nhiên ta vẫn còn thiếu nguyên liệu cho cỗ máy này hoạt động, chính là các <em>rewrite rules</em>. Các rules có thể được lấy từ những nguồn sau:</p>
+
+<h4 class="wmd-title" id="các-tiên-đề">Các tiên đề</h4>
+
+<p>Có thể ví dụ các tiên đề số học sau:</p>
+
+<pre class="prettyprint prettyprinted" style=""><code><span class="pln">x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> x
+</span><span class="lit">0</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> x </span><span class="pun">=</span><span class="pln"> x
+</span><span class="lit">1</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> x </span><span class="pun">=</span><span class="pln"> x
+x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> x</span></code></pre>
+
+<p>Tất nhiên còn nhiều tiên đề khác có thể trở thành các rewrite rules.</p>
+
+<h4 class="wmd-title" id="các-định-nghĩa-hàm">Các định nghĩa hàm</h4>
+
+<p>Một hàm số không đệ qui là một trường hợp tốt để trở thành rewrite rules. Chẳng hạn</p>
+
+<pre class="prettyprint prettyprinted" style=""><code><span class="kwd">def</span><span class="pln"> sum</span><span class="pun">(</span><span class="pln">a</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pun">,</span><span class="pln"> b</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">require</span><span class="pun">(</span><span class="pln">a </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+  a </span><span class="pun">+</span><span class="pln"> b
+</span><span class="pun">}</span></code></pre>
+
+<p>Trong trường hợp này ta có thể có rule sau <code>a &gt; 0 ==&gt; sum(a, b) = a + b</code></p>
+
+<p>Một hàm đệ qui cũng có thể trở thành các rewrite rules.</p>
+
+<pre class="prettyprint prettyprinted" style=""><code><span class="kwd">def</span><span class="pln"> factorial </span><span class="pun">(</span><span class="pln">n</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> n match </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">case</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+  </span><span class="kwd">case</span><span class="pln"> _ </span><span class="pun">=&gt;</span><span class="pln"> n </span><span class="pun">*</span><span class="pln"> factorial</span><span class="pun">(</span><span class="pln">n</span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Ta sẽ có được hai rewrite rules <code>(1) : n = 0 ==&gt; factorial(n) = 1</code> và <code>(2) n != 0 ==&gt; factorial(n) = n * factorial(n-1)</code></p>
+
+<h4 class="wmd-title" id="các-hàm-được-đánh-dấu-trở-thành-rewrite-rule">Các hàm được đánh dấu trở thành rewrite rule</h4>
+
+<p>Đây là một trong những nguồn quan trọng để tạo ra các rewrite rule, chính là từ các định lý, trong trường hợp của chúng ta là các tính chất đã được chứng minh của một hàm nào đó.</p>
+
+<pre class="prettyprint prettyprinted" style=""><code><span class="lit">@simp</span><span class="pln">
+</span><span class="kwd">def</span><span class="pln"> append_nil_lemma</span><span class="pun">(</span><span class="pln">l</span><span class="pun">:</span><span class="pln"> </span><span class="typ">List</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   append</span><span class="pun">(</span><span class="pln">l</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Nil</span><span class="pun">())</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> l
+</span><span class="pun">}</span><span class="pln"> holds</span></code></pre>
+
+<p>Hàm trên mô ta một hàm số mô tả một định lý rằng mọi danh sách khi nối liền với một danh sách rỗng thì luôn trả về chính danh sách ban đầu.</p>
+
+<p>Annotation @simp thông báo cho chúng ta biết rằng hàm này sẽ được dùng như một rewrite rule. Ở đây ta sẽ có rule <code>append(l, Nil()) = l</code></p>
+
+<h4 class="wmd-title" id="giả-thuyết-quy-nạp">Giả thuyết quy nạp</h4>
+
+<p>Một khi ta dùng chiến lược quy nạp để chứng minh một tính chất, ta sẽ được trả về hai mục tiêu con, tương ứng với bước cơ sở và bước qui nạp.</p>
+
+<p>Mục tiêu ở bước quy nạp sẽ có dạng <code>A ==&gt; B</code>, <code>A</code> được gọi là <em>giả thuyết quy nạp</em>.</p>
+
+<p>Có thể nhận thấy trong khi chứng minh B, có có thể giả định là A đúng, và trong trường hợp A có dạng <code>LHS = RHS</code> hay nói cách khác là A có dạng của một rewrite rule, ta có thể dùng A như là một rewrite rule.</p>
+
+<h4 class="wmd-title" id="giả-thuyết-cục-bộ-local-assumption">Giả thuyết cục bộ (Local assumption)</h4>
+
+<p>[PHẦN NÀY PHỨC TẠP] [TRÌNH BÀY SAU]</p>
+
+<h3 class="wmd-title" id="quá-trình-chứng-minh-tương-tác">Quá trình chứng minh tương tác</h3>
+
+<p>Bùn ngủ quá ;(</p>
+
+<p>Có thể mô tả quá trình tương tác giữa người dùng và hệ thống như sau:</p>
+
+<p>Bước 1: Người dùng mô tả tính chất cần chứng minh, giả định biểu thức cần chứng minh là <code>expr</code>. Đi tới bước 2</p>
+
+<p>Bước 2: Hệ thống thực hiện đơn giản hóa <code>expr</code>. <code>val simple_expr = simplify(expr)</code> Sau đó cố gắng chứng minh <code>simple_expr</code>: <code>val result = proof(simple_expr)</code></p>
+
+<ul>
+<li>Bước 2a, <code>result = VALID</code>, hệ thống trả về chứng minh thành công. Kết thúc.</li>
+<li>Bước 2b, <code>result = INVALID</code>, hệ thống trả về phản ví dụ chứng minh rằng hiện thực sai khác so với đặc tả. Kết thúc.</li>
+<li>Bước 2c, <code>result = UNKNOWN</code>,  hệ thống thông báo <code>simple_expr</code> cho người dùng. Đi tới bước 3.</li>
+</ul>
+
+<p>Bước 3: Người dùng mô tả thêm các hàm đóng vai trò là bổ đề cho việc chứng minh <code>simple_expr</code>. Quay lại bước 2.</p>
+
+<p>Quá trình tương tác này kết thúc chỉ khi tính chất được chứng minh là đúng, hoặc phản ví dụ được tìm ra mô tả hiện thực sai so với đặc tả.</p><h2 class="wmd-title" id="advanced-speed-up-techniques">Advanced speed up techniques</h2>
 
 <h2 class="wmd-title" id="experiment-and-measurement">Experiment and Measurement</h2>
 
