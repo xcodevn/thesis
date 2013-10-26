@@ -25,37 +25,30 @@
 <h1 id="interactive-verification-and-speed-up-techniques">INTERACTIVE VERIFICATION AND SPEED UP TECHNIQUES</h1>
 <ul>
 <li>PURPOSE</li>
-<li>Luan van nay tro thanh kieu mau cho luan van ki su sau nay.</li>
-<li>Nguoi doc chi can nhung kien thuc co ban ve Khoa hoc may tinh co the doc va hieu hoan toan noi dung cua luan van (mot dang cua self-contains)</li>
-<li>Ngon ngu don gian, gan gui, de hieu, mot it di dom cua tac gia.</li>
-<li>An chua giong van rieng cua tac gia, va nhung kinh nghiem co duoc trong qua trinh lam luan van </li>
-<li>Chi tiet den muc toi da co the, viec nay se mat nhieu thoi gian nhung ket qua mang lai se rat tuyet voi</li>
-<li>Nhu mot quyen sach giao khoa thuong thuc!</li>
-<li>Truyen tai mot luong tri thuc khong lo va thu vi den voi nguoi doc!</li>
-<li>Lam cho nguoi doc hung thu doc, nhu mot cau chuyen ke li ky va hap dan~</li>
-<li>Dua nguoi doc toi the gioi tuyet voi cua logic hoc!</li>
+<li>Luận văn này trở thành kiểu mẫu cho các luận văn kĩ sư về sau.</li>
+<li>Người đọc chỉ cần kiến thức cơ bản về Khoa học máy tính để có thể đọc hiểu hoàn toàn nội dùng của luận văn (self-contain)</li>
+<li>Ngôn ngữ đơn giản, gần gũi, dễ hiểu, dí dỏm</li>
+<li>Giọng văn riêng của tác giả, truyền tải kinh nghiệm có được trong quá trình làm luận văn</li>
+<li>Chi tiết đến mức tối đa có thể, tuy tốn nhiều thời gian nhưng kết quả mang lại sẽ rất tuyệt vời</li>
+<li>Như một quyển sách giáo khoa thường thức!</li>
+<li>Truyền tải nhiều thông tin thú vị về lịch sử nhân vật quan trọng trong ngành</li>
+<li>Làm cho người đọc hứng thú đọc, xem luận văn như một câu chuyện kể li lỳ và hấp dẫn</li>
+<li>Đưa người đọc đến thế giới tuyệt vời của logic học :-)</li>
 </ul>
 <h2 id="abstract">Abstract</h2>
 <blockquote>
 <p>Beware of bugs in the above code; I have only proved it correct, not tried it -- Donald Knuth</p>
+<p>Cẩn thận với lỗi trong đoạn mã trên; tôi chỉ mới chứng minh nó đúng, chứ chưa hề chạy thử nó -- Donald Knuth</p>
 </blockquote>
-<p>Chứng minh tính đúng đắn của một chương trình may tinh dung formal methods <sup id="fnref:formalmethods"><a href="#fn:formalmethods" rel="footnote">1</a></sup>
-mang lai su dam bao cao nhat cho cho nhung chuong trinh yeu cau su chinh xac tuyet
-doi (chuong trinh lai tau vu tru, may bay, tau dien ngam, ...).
-Tuy nhien day khong phai la mot cong viec de dang, hiện nay chuong trinh máy tính vẫn chưa thể tự động hoàn
-toàn trong việc chứng minh các chương trình phức tạp trong thuc te [cite-source].
-Mot he qua la phải có sự tương tác giữa người với máy tinh trong quá
-trình chứng minh cac chuong trinh phuc tap.</p>
+<p>Chứng minh tính đúng đắn của một chương trình may tinh dung formal methods <sup id="fnref:formalmethods"><a href="#fn:formalmethods" rel="footnote">1</a></sup> mang lại sự đảm bảo cao nhất cho các chương trình yêu cầu tính chính xác cao (ví dụ chương trình lái tàu vũ trụ, lái máy bay, lái tàu điện ngầm, ...) Đây hoàn toàn không phải là công việc dễ dàng, hiện nay chương trình máy tính vẫn chưa thể tự động hoàn toàn trong việc chứng minh các chương trình phức tạp trong thực tế [cite-source]. Một hệ quả là phải có sự tương tác giữa người với máy tính trong quá trình chứng minh các đoạn mã phức tạp.</p>
 <p>Luận văn này hiện thực ý tưởng về <em>interactive verification</em>, là sự tương tác
 giữa người và chương trình chứng minh nhằm chứng minh tính đúng đắn của các
 chương trình phức tạp.</p>
 <blockquote>
-<p>Với việc sử dụng <em>rewriting term</em>, hệ thống Leon [footnote] đã có thể tạo ra sự tương tác
-hai chiều với người dùng.</p>
+<p>Với việc sử dụng <em>rewriting term</em>, hệ thống Leon [footnote] đã có thể tạo ra &gt; sự tương tác hai chiều với người dùng. [Remove]</p>
 </blockquote>
 <p>Bên cạnh đó, luận văn còn đề cập tới khía cạnh tốc độ của quá trình chứng minh,
-một loạt các kỹ thuật tăng tốc đã được áp dụng nhằm cải tiến tốc độ của hệ thống.
-Có thể kể đến ba nổ lực chính:
+một loạt các kỹ thuật tăng tốc đã được áp dụng nhằm cải tiến tốc độ của hệ thống. Có thể kể đến ba nổ lực chính:
 (1) áp dụng bộ lọc sử dụng tri thức của hệ thống và học máy để lọc bỏ những
 phần thừa trong quá trình tính toán,
 (2) kĩ thuật profiling được áp dụng nhằm phát hiện những mắc xích chiếm lượng
@@ -67,8 +60,7 @@ thực ban đầu.</p>
 <p>Bên cạnh những kết quả đạt được trên, bản thân tác giả cũng gặt hái được nhiều
 kinh nghiệm quý báu trong quá trình làm luận văn, nhất là kinh nghiệm trong quy
 trình hiện thực hệ thống và trong việc đảm bảo chất lượng, tính ổn định của hệ
-thống.
-Thiet nghi day la nhung kinh nghiem quan trong nhat cho mot nguoi ki su.</p>
+thống. Thiết nghĩ đây là những kinh nghiệm quan trọng đối với một người kĩ sư.</p>
 <hr />
 <h2 id="acknowledgement">Acknowledgement</h2>
 <p>Tác giả gửi lời cảm ơn chân thành đến phó giáo sư tiến sĩ Quản Thành Thơ, phó
@@ -90,65 +82,33 @@ thuật học máy có thể học từ chính quá trình sử dụng hệ th�
 <p>Với những nổ lực trong việc cải thiện tốc độ, hệ thống đã có những cải
 thiện rõ rệt về tốc độ, góp phần cải thiện đáng kể thời gian tương tác với người
 dùng. [lủng củng]</p>
-<p>Việc sử dụng bộ lọc áp dụng học máy không chỉ có tác dụng tăng tốc cho rieng hệ
-thống, mà bộ lọc còn có thể được sử dụng trong các trường hợp tương tự.
-Ví dụ như bo loc dam nham vai tro tien xu ly cho de tai tien si "Name it please"</p>
-<p>Mot dong gop nho va thuan tuy ve ky thuat, trong thoi gian lam viec voi he thong
-Leon tác giả đã phat hien va sửa được một lỗi tồn tại trong một thời gian dài
-bên trong nhân của hệ thống.</p>
+<p>Việc sử dụng bộ lọc áp dụng học máy không chỉ có tác dụng tăng tốc cho riêng hệ
+thống, mà bộ lọc còn có thể được sử dụng trong các trường hợp tương tự, có thể kể đến như là bộ lọc đảm nhận vai trò tiền xữ lý trong đề tài "Name it please" của nghiên cứu sinh [Tên anh í]</p>
+<p>Một đóng góp nhỏ và thuần túy về kỹ thuật, người khiến bản thân tác giả rất hài lòng đó là trong thời gian làm việc với hệ thống, tác giả đã phát hiện và sửa được một lỗi tồn tại trong một thời gian dài bên trong nhân của hệ thống.</p>
 <p>Bên cạnh đó, trong thời gian rãnh rỗi của mình, tác giả cũng đã thiết kế một
-giao diện mới cho hệ thống trên nền web.
-Tuy khối lượng công việc nhỏ, nhưng cũng coi day là một thói quen có ích trong
-thời gian rãnh rỗi.</p>
+giao diện mới cho hệ thống trên nền web. Tuy khối lượng công việc nhỏ, nhưng cũng có thể coi đây là một thói quen có ích trong việc sử dụng thời gian rãnh rỗi.</p>
 <hr />
 <h2 id="table-of-contain">Table of contain</h2>
 <h2 id="introduction">Introduction</h2>
-<p>Logic hoc la linh vuc nghien cuu ve viec suy luan mot cach dung dan, la tru cot
-cua toan hoc hien dai. Logic da duoc nha hien triet co dai Aristost nghien cuu
-va dat nhung thanh tuu ban dau, co the ke den logic tam doan luan [footnote] cua
-ong.
-Logic hoc chi thuc su tro thanh nen tang cua toan hoc tu cuoi the
-ky XIX dau the ky XX voi no luc thong nhat nen tang logic cua toan hoc cua
-chuong trinh Hilbert<sup id="fnref:HG"><a href="#fn:HG" rel="footnote">5</a></sup>, sau do la su xuat hien cua hai dinh ly bat bao toan cua
-Godel, chinh hai dinh ly nay da pha vo chuong trinh Hilbert! Tat nhien khong the vi
-ly do khong co mot logic chung nhat cho toan bo toan hoc ma co the choi tu vai
-tro nen tang cua logic trong moi linh vuc toan hoc. Voi anh sang soi duong cua
-logic hoc, nhung dinh ly toan hoc se luon la nhung chan ly truong ton cung thoi
-gian.</p>
-<p>Nam 1969, Dana S. Scott<sup id="fnref:dana"><a href="#fn:dana" rel="footnote">2</a></sup> viet mot bai bao danh dau su ra doi cua <em>Logic of Computable Functions</em> - LCF ,
-mo ra mot nganh nghien cuu ket hop giua logic hoc va
-lambda-caculus, tu do cho ra doi cua ngon ngu lam trinh ham dau tien - ML, ngon ngu co suc anh huong
-lon toi nhung ngon ngu lap trinh ham hien dai nhu Ocaml, Haskell, hay Scala.
-Dieu thu vi cua lich su la bai bao nay chua tung duoc cong bo rong rai den tan
-nam 1993 vi ly do tac cua bai bao nhan thay su khong can thiet phai xuat ban no.
-Co le day la bai bao khong duoc xuat ban co anh huong nhat trong lich su cua
-nganh khoa hoc may tinh.</p>
-<p>Voi LCF, nhung <em>proof asisstance</em><sup id="fnref:proofasiss"><a href="#fn:proofasiss" rel="footnote">4</a></sup> da co the chung minh (duoi su tuong tac voi
-nguoi dung)
-nhung dinh ly lon cua toan hoc, nhu dinh ly bat bao toan cua Godel, dinh ly cuoi
-cung cua Fermat<sup id="fnref:fermat"><a href="#fn:fermat" rel="footnote">3</a></sup>.
-Ben canh do la nhung ung dung thuc tien, cac <em>proof asisstance</em> da duoc su dung
-de chinh minh tinh dung dang cua phan cung may tinh [cite], cua mot he dieu hanh
-hoan chinh [cite L4OS], trinh bien dich [cite], CardJava[cite]</p>
+<p>Logic học là lĩnh vực nghiên cứu về sự suy luận đúng đắn. Ngày nay, logic học là nền tảng của mọi lĩnh vực toán học hiện đại. Logic được nhiều nhà hiền triết nghiên cứu từ thời cổ đại, có thể kể đến logic tam đoạn luận [footnote] của Aristote. Logic học thực sự trở thành nền tảng của toán học từ cuối thế kỉ XIX đầu thế kỉ XX với nổ lực thống nhất toán học trên cùng một nền tảng logic học của Hilbert, được biết đến với tên gọi <em>chương trình Hilbert</em>. Để rồi đến năm 1931 khi Kurt Gödel đập tan chương trình Hilbert với việc chứng minh hai định lý <em>bất hoàn chỉnh</em> [lúa quá] nổi tiếng [cite-footnote]<sup id="fnref:HG"><a href="#fn:HG" rel="footnote">4</a></sup>. Tất nhiên chương trình Hilbert không phải là vô dụng, bộ mặt của toán học đã thay đổi hoàn toàn, logic giờ đã đóng vai trò là nền tảng trong mọi nhánh của toán học. Đưới nền tảng logic vững chắc, mọi định lý toán học sẽ luôn là những chân lý trường tồn cùng thời gian.</p>
+<p>Năm 1969, Dana S. SCoot<sup id="fnref:dana"><a href="#fn:dana" rel="footnote">2</a></sup> viết một bài báo đánh dấu sự ra đời của <em>Logic cho những hàm khả tính</em> (Logic of Computable Functions - LCF). Bài báo này mở ra một nhánh nghiên cứu mới, là sự kết hợp giữa logic học và giải tích lambda. Trên nền tảng đó, các nhà nghiên cứu tại đại học Edinburgh dưới sự dẫn dắt của Robin Milner [footnote: Robin Milner đạt giải Turing năm 1991 cho những đóng góp với ngành Khoa học máy tính] LCF, một trong những <em>interactive automated theorem prover</em> đầu tiên. Bên cạnh đó là sự ra đời của ngôn ngữ lập trình hàm ML, ngon ngu này anh hưởng lớn tới các ngôn ngữ lập trình hàm hiện đại như Ocamal, Haskell, hay Scala.</p>
+<p>Điều thú vụ của lịch sử là bài báo này chưa từng được công bố rộng rãi cho đến tận năm 1993, lý do cho việc này là tác giả của bài báo nhận thấy sự không cần thiết của việc xuất bản bài báo :)
+Có lẽ đây là bài báo không được xuất bản có ảnh hưởng lớn nhất trong lịch sử của ngành Khoa học máy tính.</p>
+<p>Những <em>proof asisstance</em><sup id="fnref:proofasiss"><a href="#fn:proofasiss" rel="footnote">3</a></sup> có thể chứng minh (dựa trên tương tác với người dùng) những định lý lớn của toán học, có thể kể đến định lý bất hoàn hảo của Godel, định lý Fermat lớn[^fermat].</p>
+<p>Bên cạnh đó là những ứng dụng thực tiễn, có thể kể đến hardware verification[cite], chứng minh tính đúng đắn của một hệ điều hành hoàn chỉnh [cite L4OS], trình biên dịch [cite], JavaCard[cite]</p>
 <p>Leon là một chương trình chứng minh tự động được phát triển bởi nhóm nghiên cứu
 LARA tại đại học EPFL, Thụy Sĩ.
 Điểm mạnh của Leon là cho phép người lập trình dùng chính ngôn ngữ Scala cho
 việc đặc tả những tính chất của chương trình Scala.
-Leon có thể phát hiện ra các <em>phản ví dụ</em> trong trường hợp có sự sai khác giữa đặc
-tả và hiện thực.</p>
+Leon có thể phát hiện ra các <em>phản ví dụ</em> trong trường hợp có sự sai khác giữa đặc tả và hiện thực.</p>
 <p>Về nguyên tắc, Leon thực hiện việc chứng minh trên môt ngôn ngữ gọi là PureScala.
-Ngôn ngữ này la mot tap con cua Scala, chỉ hỗ trợ các hàm không có hiệu ứng lề
-(thuần hàm) voi yêu cầu các hàm này phải là hàm bậc nhất (không nhận một hàm khác
-như là tham số, cũng như không trả về một hàm) và chỉ hỗ trợ các kiểu dữ liệu
-đơn giản (số nguyên, kiểu dữ liệu trừu tượng, tập hợp, tuples)</p>
-<p>Leon hoạt động dựa trên ý tưởng đơn giản là Unrolling. Để chứng minh một
-biểu thức thỏa một tính chất nào đó, với những hàm không đệ quy trong biểu thức,
-ta có thể thực hiện đơn giản bởi việc thay lời gọi hàm bằng thân của hàm này đã
-được thay các biến bởi các tham số truyền theo.
+Ngôn ngữ này là một tập con của ngôn ngữ Scala, chỉ hỗ trợ các hàm không có hiệu ứng lề (thuần hàm) với yêu cầu các hàm này phải là hàm bậc nhất (không nhận một hàm khác như là tham số, cũng như không trả về một hàm) và chỉ hỗ trợ các kiểu dữ liệu đơn giản (số nguyên, kiểu dữ liệu trừu tượng, tập hợp, tuples)</p>
+<p>Leon hoạt động dựa trên ý tưởng đơn giản là <em>unrolling</em>. Để chứng minh một
+biểu thức thỏa một tính chất nào đó, với những hàm không đệ quy trong biểu thức, ta có thể thực hiện đơn giản bởi việc thay lời gọi hàm bằng thân của hàm này đã được thay các biến bởi các tham số truyền theo.
 Đối với các hàm gọi chính nó (hàm đệ quy) Leon cũng thực hiện tương tự, nhưng
-kết quả cho mỗi lần <em>Unrolling</em>, ta chỉ được một phiên bản xấp xỉ với hàm đệ qui.
-Dựa vào việc <em>Xấp xĩ cận dưới</em> (một xấp xĩ mà nếu hàm này trả về là sai với đặc tả
-thì hàm đệ quy cũng sai với đặc tả), và <em>Xấp xĩ cận trên</em> (một xấp xĩ mà nếu hàm
+kết quả cho mỗi lần <em>unrolling</em>, ta chỉ được một phiên bản xấp xỉ với hàm đệ qui.
+Dựa vào việc <em>xấp xĩ dưới</em> (một xấp xĩ mà nếu hàm này trả về là sai với đặc tả
+thì hàm đệ quy cũng sai với đặc tả), và <em>xấp xĩ trên</em> (một xấp xĩ mà nếu hàm
 này trả về là đúng với đặc tả thì hàm đệ quy cũng đúng với đặc tả) ta có thể
 thoát ra khỏi quá trình Unrolling vô tận và vẫn đảm bảo tính đúng đắn của chứng
 minh (hoặc phản ví dụ).
@@ -157,11 +117,8 @@ hiện chứng minh trên các xấp xĩ trên và xấp xĩ dưới của biể
 <p>Tuy nhiên, hệ thống Leon hiện tại hỗ trợ rất kém trong việc chứng minh một tính
 chất của chương trình bằng cách sử dụng các bổ đề kèm theo.
 Một sự thật rằng đa phần các chứng minh luôn cần những bồ đề kèm theo.
-Có thể giải thích duoc việc này nếu coi Leon là một hệ thống chứng minh diễn dịch,
-nói cách khác, thông thường Leon sẽ không thể thực hiện việc chứng minh qui nạp
-nếu không có sử tương tác với người dùng..
-Chính các bổ đề sẽ lấp đầy mắc xích trống, các bổ đề sẽ nhận nhiệm vụ chứng minh
-qui nạp.</p>
+Có thể giải thích duoc việc này nếu coi Leon là một hệ thống chứng minh diễn dịch, nói cách khác, thông thường Leon sẽ không thể thực hiện việc chứng minh qui nạp nếu không có sử tương tác với người dùng.
+Chính các bổ đề sẽ lấp đầy mắc xích trống, các bổ đề sẽ nhận nhiệm vụ chứng minh qui nạp.</p>
 <p>Luận văn đưa ra ý tưởng sử dụng rewriting term, để don gian hoa biểu thức cần
 chứng minh trước khi đưa cho solver bên dưới.</p>
 <p>Quá trình <em>simplify</em> một biểu thức là quá trình biển đổi biểu thức về một dạng
@@ -170,11 +127,8 @@ Bằng việc sử dụng các <em>rewriting rules</em> có dạng <code>if COND
 thể thay vế trái <code>LHS</code> bằng vế phải <code>RHS</code> nếu <code>COND</code> được thỏa.
 Quá trình xem ra đơn giản này là một trong những cấu thành chính va phuc tap
 nhat của các <em>Interactive proof assistance.</em></p>
-<p>Bằng việc chuyển đổi các bổ đề, định nghĩa hàm, giả thuyết quy nạp trở thành các
-<em>rewriting rules</em> ta có thể chứng minh một cách tự động những tính chất mà trước
-kia phải làm hoàn toàn bằng tay.</p>
-<p>Một trong những chú trọng của luận văn này là cải thiện thời gian chứng minh của
-Leon tới mới tối đa có thể. Có thể kể đến ba nỗ lực chính để đạt mục tiêu trên.</p>
+<p>Bằng việc chuyển đổi các bổ đề, định nghĩa hàm, giả thuyết quy nạp trở thành các <em>rewriting rules</em> ta có thể chứng minh một cách tự động những tính chất mà trước kia phải làm bằng tay.</p>
+<p>Một trong những chú trọng của luận văn này là cải thiện thời gian chứng minh của Leon tới mới tối đa có thể. Có thể kể đến ba nỗ lực chính để đạt mục tiêu trên.</p>
 <p>Thứ nhất là việc sử dụng một bộ lọc nhằm lọc ra các <em>rewrite rules</em> không cần
 thiết cho quá trình chứng minh.
 Thực nghiệm cho thấy một số lượng rất ít các rules là cần thiết cho quá trình
@@ -192,18 +146,13 @@ trọng này.
 Quy trình này được lập lại, và mỗi lần lặp tốc độ của hệ thống lại được cải thiện.</p>
 <p>Nỗ lực thứ ba để đẩy tốc độ của hệ thống và có lẽ là nhân tố quan trọng nhất đó
 là thực hiện song song hóa hệ thống hiện tại.
-Ý tưởng đơn giản là ta có thể chứng minh các tính chất của chương trình một cách
-song song, độc lập với nhau.
+Ý tưởng đơn giản là ta có thể chứng minh các tính chất của chương trình một cách song song, độc lập với nhau.
 Chỉ với nỗ lực này, kết quả đạt được là hệ thống có thể mở rộng tới mức tối đa.</p>
 <p>Ở phần cuối của luận văn, tác giả cũng đề cập tới qui trình hiện thực toàn bộ
-luận văn sử dụng công cụ quản lý dự án Github cũng như git cho chức năng quản lý
-mã nguồn, mà theo ý tưởng của tác giả là điều này nằm ngoài những kiến thức đã
-được dạy ở giảng đường.
+luận văn sử dụng công cụ quản lý dự án Github cũng như git cho chức năng quản lý mã nguồn, mà theo ý kiến riêng của tác giả là điều này nằm ngoài những kiến thức đã được dạy ở giảng đường.
 Bên cạnh đó là kinh nghiệm của tác giả trong việc đảm bảo chất lượng cũng như
-tính ổn định của hệ thống thông qua việc thực hiện Regression testing và Tích
-hợp liên tục (CI - english please!)</p>
-<p>Phần tiếp theo sẽ đi vào chi tiết về interactive verification, các kĩ thuật tăng
-tốc được áp dung.</p>
+tính ổn định của hệ thống thông qua việc thực hiện <em>regression testing</em> và <em>tích hợp liên tục</em> (CI - english please!)</p>
+<p>Phần tiếp theo sẽ đi vào chi tiết về interactive verification, các kĩ thuật tăng tốc được áp dụng.</p>
 <h2 id="interactive-verification">Interactive verification</h2>
 <h2 id="advanced-speed-up-techniques">Advanced speed up techniques</h2>
 <h2 id="experiment-and-measurement">Experiment and Measurement</h2>
@@ -220,16 +169,14 @@ tốc được áp dung.</p>
 <p>de dam bao chuong trinh may tinh lam viec hoan toan dung so voi dac ta cua no ta khong the su dung phuong phep testing truyen thong - http://c2.com/cgi/wiki?TestsCantProveTheAbsenceOfBugs&#160;<a href="#fnref:formalmethods" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:dana">
-<p>Nguoi dat giai Turing cho nhung dong gop ve Automata theory&#160;<a href="#fnref:dana" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fermat">
-<p>dinh ly duoc chung minh boi nha toan hoc ~ten trong khoang thoi gian 10 nam lam viec doc lap&#160;<a href="#fnref:fermat" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Nguoi dat giai Turing cho nhung dong gop ve Automata theory
+[fermat]: dinh ly duoc chung minh boi nha toan hoc ~ten trong khoang thoi gian 10 nam lam viec doc lap&#160;<a href="#fnref:dana" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:proofasiss">
-<p>la nhung chuong trinh may tinh ho tro nguoi dung trong chung minh&#160;<a href="#fnref:proofasiss" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>la nhung chuong trinh may tinh ho tro nguoi dung trong chung minh&#160;<a href="#fnref:proofasiss" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:HG">
-<p>Hilbert va Godel duoc coi la 2 trong 4 nha logic vi dai nhat tung song&#160;<a href="#fnref:HG" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Hilbert va Godel duoc coi la 2 trong 4 nha logic vi dai nhat tung song&#160;<a href="#fnref:HG" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
