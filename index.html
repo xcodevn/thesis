@@ -24,19 +24,6 @@
       <section>
 <h1 class="wmd-title" id="interactive-verification-and-speed-up-techniques">INTERACTIVE VERIFICATION AND SPEED UP TECHNIQUES</h1>
 
-<ul>
-<li>PURPOSE
-<ul><li>Luận văn này trở thành kiểu mẫu cho các luận văn kĩ sư về sau.</li>
-<li>Người đọc chỉ cần kiến thức cơ bản về Khoa học máy tính để có thể đọc hiểu hoàn toàn nội dùng của luận văn (self-contain)</li>
-<li>Ngôn ngữ đơn giản, gần gũi, dễ hiểu, dí dỏm</li>
-<li>Giọng văn riêng của tác giả, truyền tải kinh nghiệm có được trong quá trình làm luận văn</li>
-<li>Chi tiết đến mức tối đa có thể, tuy tốn nhiều thời gian nhưng kết quả mang lại sẽ rất tuyệt vời</li>
-<li>Như một quyển sách giáo khoa thường thức!</li>
-<li>Truyền tải nhiều thông tin thú vị về lịch sử nhân vật quan trọng trong ngành</li>
-<li>Làm cho người đọc hứng thú đọc, xem luận văn như một câu chuyện kể li lỳ và hấp dẫn</li>
-<li>Đưa người đọc đến thế giới tuyệt vời của logic học :-)</li></ul></li>
-</ul>
-
 <h2 class="wmd-title" id="abstract">Abstract</h2>
 
 <blockquote>
@@ -45,7 +32,7 @@
   <p>Cẩn thận với lỗi trong đoạn mã trên; tôi chỉ mới chứng minh nó đúng, chứ chưa hề chạy thử nó – Donald Knuth</p>
 </blockquote>
 
-<p>Chứng minh tính đúng đắn của một chương trình may tinh dung formal methods <a href="#fn:formalmethods" id="fnref:formalmethods" title="See footnote" class="footnote">1</a> mang lại sự đảm bảo cao nhất cho các chương trình yêu cầu tính chính xác cao (ví dụ chương trình lái tàu vũ trụ, lái máy bay, lái tàu điện ngầm, …) Đây hoàn toàn không phải là công việc dễ dàng, hiện nay chương trình máy tính vẫn chưa thể tự động hoàn toàn trong việc chứng minh các chương trình phức tạp trong thực tế [cite-source]. Một hệ quả là phải có sự tương tác giữa người với máy tính trong quá trình chứng minh các đoạn mã phức tạp.</p>
+<p>Chứng minh tính đúng đắn của một chương trình may tinh dùng formal methods <a href="#fn:formalmethods" id="fnref:formalmethods" title="See footnote" class="footnote">1</a> mang lại sự đảm bảo cao nhất cho các chương trình yêu cầu tính chính xác cao (ví dụ chương trình lái tàu vũ trụ, lái máy bay, lái tàu điện ngầm, …) Đây hoàn toàn không phải là công việc dễ dàng, hiện nay chương trình máy tính vẫn chưa thể tự động hoàn toàn trong việc chứng minh các chương trình phức tạp trong thực tế [cite-source]. Một hệ quả là phải có sự tương tác giữa người với máy tính trong quá trình chứng minh các đoạn mã phức tạp.</p>
 
 <p>Luận văn này hiện thực ý tưởng về <em>interactive verification</em>, là sự tương tác
 giữa người và chương trình chứng minh nhằm chứng minh tính đúng đắn của các
@@ -86,8 +73,7 @@ sát, và hỗ trợ tác giả trong thời gian làm luận văn.</p>
 <p>Và trên tất cả, luận văn này dành cho gia đình của tác giả, nhất là người mẹ đã luôn
 chăm sóc và dõi theo tác giả.</p>
 
-<p>Gửi lời tưởng nhớ đến thầy Dương Công Vinh, người đã dắt tác giả đi những bước đi
-dau tien trên con đường đến với ngành <em>khoa học máy tính</em>.</p>
+<p>Gửi lời tưởng nhớ đến thầy Dương Công Vinh, người đã dắt tác giả đi những bước đi đầu tiên trên con đường đến với ngành <em>khoa học máy tính</em>.</p>
 
 <hr>
 
@@ -101,8 +87,7 @@ những tính chất mà trước kia phải dựa vào người sử dụng.</p
 thuật học máy có thể học từ chính quá trình sử dụng hệ thống của người dùng.</p>
 
 <p>Với những nổ lực trong việc cải thiện tốc độ, hệ thống đã có những cải
-thiện rõ rệt về tốc độ, góp phần cải thiện đáng kể thời gian tương tác với người
-dùng. [lủng củng]</p>
+thiện rõ rệt về tốc độ, góp phần cải thiện đáng kể thời gian tương tác với người dùng. [lủng củng]</p>
 
 <p>Việc sử dụng bộ lọc áp dụng học máy không chỉ có tác dụng tăng tốc cho riêng hệ
 thống, mà bộ lọc còn có thể được sử dụng trong các trường hợp tương tự, có thể kể đến như là bộ lọc đảm nhận vai trò tiền xữ lý trong đề tài "Name it please" của nghiên cứu sinh [Tên anh í]</p>
@@ -161,7 +146,7 @@ chứng minh trước khi đưa cho solver bên dưới.</p>
 
 <p>Quá trình <em>simplify</em> một biểu thức là quá trình biển đổi biểu thức về một dạng
 tương tương nhưng đơn giản hơn thong qua cac <em>rewriting rules</em>.
-Bằng việc sử dụng các <em>rewriting rules</em> có dạng <code>if COND then LHS = RHS</code> ta có
+Bằng việc sử dụng các <em>rewriting rules</em> có dạng <code>COND ==&gt; LHS = RHS</code> ta có
 thể thay vế trái <code>LHS</code> bằng vế phải <code>RHS</code> nếu <code>COND</code> được thỏa.
 Quá trình xem ra đơn giản này là một trong những cấu thành chính va phuc tap
 nhat của các <em>Interactive proof assistance.</em></p>
@@ -207,25 +192,27 @@ tính ổn định của hệ thống thông qua việc thực hiện <em>regres
 
 <p>Câu chuyện bắt đầu khi nhân vật chính của chúng ta, Văn Hòa, muốn chứng minh tính đúng đắn của thuật toán sắp xếp mới do chính tay Văn Hòa nghĩ ra. Văn Hòa bắt đầu mô tả tính chất mong muốn của thuật toán, đầu vào theo như hắn nghĩ chắc chắn sẽ là một danh sách các số nguyên, và đầu ra của thuật toán sẽ là một hoán vị của danh sách ban đầu sao cho các số nguyên trong danh sách có thứ tự không giảm.</p>
 
-<p>Vậy là Văn Hòa đã đặc tả được tính chất mong muốn cho thuật toán của mình, một thuật toán sắp xếp tăng dần. Nhân vật chính hứng thú nhấp chuột vào nút <em>Chứng minh</em> trên cửa sổ phần mềm vô danh [Microsoft Word ;)]. Một lát sau, có lẽ là 10 phút sau, phần mềm trả về một thông báo không hề được mong đợi “Không thể chứng minh”. Chỉ vỏn vẹn một thông báo như vậy. </p>
+<p>Vậy là Văn Hòa đã đặc tả được tính chất mong muốn cho thuật toán của mình, một thuật toán sắp xếp tăng dần. Nhân vật chính hứng thú nhấp chuột vào nút <em>Chứng minh</em> trên cửa sổ phần mềm vô danh [Microsoft Word ;)]. Một lát sau, có lẽ là 10 phút sau, phần mềm trả về một thông báo không hề được mong đợi “Không thể chứng minh.” Chỉ vỏn vẹn một thông báo như vậy. </p>
 
-<p>Văn Hòa bắt đầu trâm ngâm suy nghĩ ”ừ thì đồng ý là chương trình này phức tạp nên không thể chứng minh được nhưng …” Nhân vật chính ”Ồ!” lên trong khoảng không, dường như anh đã nhận ra một điều gì đó tinh tế. Thầm nghĩ trong đầu “nếu không thế chứng minh được thì ít nhất cũng phải chứng minh tới đâu đó, cho dù chưa tới đích”.</p>
+<p>Văn Hòa bắt đầu trâm ngâm suy nghĩ ”ừ thì đồng ý là chương trình này phức tạp nên không thể chứng minh được nhưng …” Nhân vật chính ”Ồ!” lên trong khoảng không, dường như anh đã nhận ra một điều gì đó tinh tế. Thầm nghĩ trong đầu “nếu không thế chứng minh được thì ít nhất cũng phải chứng minh tới đâu đó, cho dù chưa tới đích.”</p>
 
-<p>Tiếp tục với những suy tư trong đầu mình, cuối cùng bước tranh cũng dần hiện rõ trong đầu Văn Hòa. “Phải chăng có một cơ chế nào đó, biến mục tiêu cần chứng minh ban đầu, thành các mục tiêu con đơn giản hơn, lúc này người dùng có thể tập trung vào việc chứng minh các mục tiêu con”</p>
+<p>Tiếp tục với những suy tư trong đầu mình, cuối cùng bước tranh cũng dần hiện rõ trong đầu Văn Hòa. “Phải chăng có một cơ chế nào đó, biến mục tiêu cần chứng minh ban đầu, thành các mục tiêu con đơn giản hơn, lúc này người dùng có thể tập trung vào việc chứng minh các mục tiêu con.”</p>
 
 <p>Màn đêm bắt đầu buông xuống, xung quanh phố phường chìm dần vào trong đêm tối, chỉ có căn phòng của nhân vật chính là con sáng điện. Trong căn phòng đó có một người đang miệt mài với những suy nghĩ trong đầu mình.</p>
 
-<p>Những suy tư tưởng chừng như chỉ xuất hiện trong đầu Văn Hòa, nhân vật chính của chúng ta, cũng chính là suy tư của những người đã viết nên các <em>interactive ATP</em> nổi tiếng như LCF, HOL, Isabelle. Khái niệm <em>cơ chế nào đó</em> trong đầu Văn Hòa chính là proof tactic, chiến lược chứng minh. Một chiến lược chứng minh có thể được xem như một cổ máy có đầu vào là mục tiêu cần chứng minh, đầu ra của cổ máy này chính là một danh sách các mục tiêu con, tất nhiên là đơn giản hơn mục tiêu ban đầu.</p>
+<p>Những suy tư tưởng chừng như chỉ xuất hiện trong đầu Văn Hòa, nhân vật chính của chúng ta, cũng chính là suy tư của những người đã viết nên các <em>interactive ATP</em> nổi tiếng như LCF, HOL, Isabelle. <em>Cơ chế nào đó</em> trong câu chuyện là <em>proof tactic</em>, chiến lược chứng minh.</p>
 
-<p>Có thể kể đến hai chiến lược dễ hình dung và có lẽ là hữu hiệu nhất</p>
+<p>Một chiến lược chứng minh có thể được xem như một cổ máy có đầu vào là mục tiêu cần chứng minh, đầu ra của cổ máy này chính là một danh sách các mục tiêu con, tất nhiên là đơn giản hơn mục tiêu ban đầu.</p>
+
+<p>Có thể kể đến hai chiến lược dễ hình dung và rất hữu hiệu:</p>
 
 <ul>
-<li><p>Chiến lực Quy nạp: chiến lược này biến mục tiêu cần chứng minh thành hai mục tiêu con, mục tiêu thứ nhất chứng minh trường hợp cơ bản của quá trình quy nạp, mục tiêu con thứ hai là chứng minh trường hợp tới.</p></li>
-<li><p>Chiến lược đơn giản hóa (simplify): chiến lược này tìm cách biến đổi mục tiêu ban đầu (gọi là <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-1-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-1" style="width: 1.301em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.977em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(1.572em 1000.003em 2.492em -0.43em); top: -2.162em; left: 0.003em;"><span class="mrow" id="MathJax-Span-2"><span class="msubsup" id="MathJax-Span-3"><span style="display: inline-block; position: relative; width: 0.923em; height: 0px;"><span style="position: absolute; clip: rect(2.005em 1000.003em 2.762em -0.43em); top: -2.595em; left: 0.003em;"><span class="mi" id="MathJax-Span-4" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 2.6em;"></span></span><span style="position: absolute; top: -2.216em; left: 0.49em;"><span class="mn" id="MathJax-Span-5" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 2.384em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.167em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.932em; vertical-align: -0.282em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-1">e_1</script>) trở thành mục tiêu mới (gọi là <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-2-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-6" style="width: 1.301em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.977em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(1.572em 1000.003em 2.492em -0.43em); top: -2.162em; left: 0.003em;"><span class="mrow" id="MathJax-Span-7"><span class="msubsup" id="MathJax-Span-8"><span style="display: inline-block; position: relative; width: 0.923em; height: 0px;"><span style="position: absolute; clip: rect(2.005em 1000.003em 2.762em -0.43em); top: -2.595em; left: 0.003em;"><span class="mi" id="MathJax-Span-9" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 2.6em;"></span></span><span style="position: absolute; top: -2.216em; left: 0.49em;"><span class="mn" id="MathJax-Span-10" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 2.384em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.167em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.932em; vertical-align: -0.282em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-2">e_2</script>), tương tương với mục tiêu ban đầu. Rõ ràng ta có phương trình <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-3-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-11" style="width: 4.223em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.195em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(2.221em 1000.003em 3.141em -0.43em); top: -2.811em; left: 0.003em;"><span class="mrow" id="MathJax-Span-12"><span class="msubsup" id="MathJax-Span-13"><span style="display: inline-block; position: relative; width: 0.923em; height: 0px;"><span style="position: absolute; clip: rect(2.005em 1000.003em 2.762em -0.43em); top: -2.595em; left: 0.003em;"><span class="mi" id="MathJax-Span-14" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 2.6em;"></span></span><span style="position: absolute; top: -2.216em; left: 0.49em;"><span class="mn" id="MathJax-Span-15" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 2.384em;"></span></span></span></span><span class="mo" id="MathJax-Span-16" style="font-family: MathJax_Main; padding-left: 0.273em;">=</span><span class="msubsup" id="MathJax-Span-17" style="padding-left: 0.273em;"><span style="display: inline-block; position: relative; width: 0.923em; height: 0px;"><span style="position: absolute; clip: rect(2.005em 1000.003em 2.762em -0.43em); top: -2.595em; left: 0.003em;"><span class="mi" id="MathJax-Span-18" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 2.6em;"></span></span><span style="position: absolute; top: -2.216em; left: 0.49em;"><span class="mn" id="MathJax-Span-19" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 2.384em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.817em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.932em; vertical-align: -0.282em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-3">e_1 = e_2</script>. Một cách tổng quát hóa, quá trình đơn giản hóa là quá trình áp dụng các luật có dạng 
+<li><p>Chiến lược quy nạp: chiến lược này biến mục tiêu cần chứng minh thành hai mục tiêu con, mục tiêu thứ nhất chứng minh trường hợp cơ bản của quá trình quy nạp, mục tiêu con thứ hai là chứng minh trường hợp quy nạp.</p></li>
+<li><p>Chiến lược đơn giản hóa (simplify): chiến lược này tìm cách biến đổi mục tiêu ban đầu (gọi là <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-4-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-20" style="width: 1.301em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.977em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(1.572em 1000.003em 2.492em -0.43em); top: -2.162em; left: 0.003em;"><span class="mrow" id="MathJax-Span-21"><span class="msubsup" id="MathJax-Span-22"><span style="display: inline-block; position: relative; width: 0.923em; height: 0px;"><span style="position: absolute; clip: rect(2.005em 1000.003em 2.762em -0.43em); top: -2.595em; left: 0.003em;"><span class="mi" id="MathJax-Span-23" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 2.6em;"></span></span><span style="position: absolute; top: -2.216em; left: 0.49em;"><span class="mn" id="MathJax-Span-24" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 2.384em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.167em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.932em; vertical-align: -0.282em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-4">e_1</script>) trở thành mục tiêu mới (gọi là <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-5-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-25" style="width: 1.301em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.977em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(1.572em 1000.003em 2.492em -0.43em); top: -2.162em; left: 0.003em;"><span class="mrow" id="MathJax-Span-26"><span class="msubsup" id="MathJax-Span-27"><span style="display: inline-block; position: relative; width: 0.923em; height: 0px;"><span style="position: absolute; clip: rect(2.005em 1000.003em 2.762em -0.43em); top: -2.595em; left: 0.003em;"><span class="mi" id="MathJax-Span-28" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 2.6em;"></span></span><span style="position: absolute; top: -2.216em; left: 0.49em;"><span class="mn" id="MathJax-Span-29" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 2.384em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.167em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.932em; vertical-align: -0.282em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-5">e_2</script>), tương tương với mục tiêu ban đầu. Rõ ràng ta có phương trình <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-6-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-30" style="width: 4.223em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.195em; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(2.221em 1000.003em 3.141em -0.43em); top: -2.811em; left: 0.003em;"><span class="mrow" id="MathJax-Span-31"><span class="msubsup" id="MathJax-Span-32"><span style="display: inline-block; position: relative; width: 0.923em; height: 0px;"><span style="position: absolute; clip: rect(2.005em 1000.003em 2.762em -0.43em); top: -2.595em; left: 0.003em;"><span class="mi" id="MathJax-Span-33" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 2.6em;"></span></span><span style="position: absolute; top: -2.216em; left: 0.49em;"><span class="mn" id="MathJax-Span-34" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 2.384em;"></span></span></span></span><span class="mo" id="MathJax-Span-35" style="font-family: MathJax_Main; padding-left: 0.273em;">=</span><span class="msubsup" id="MathJax-Span-36" style="padding-left: 0.273em;"><span style="display: inline-block; position: relative; width: 0.923em; height: 0px;"><span style="position: absolute; clip: rect(2.005em 1000.003em 2.762em -0.43em); top: -2.595em; left: 0.003em;"><span class="mi" id="MathJax-Span-37" style="font-family: MathJax_Math; font-style: italic;">e</span><span style="display: inline-block; width: 0px; height: 2.6em;"></span></span><span style="position: absolute; top: -2.216em; left: 0.49em;"><span class="mn" id="MathJax-Span-38" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 2.384em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.817em;"></span></span></span><span style="border-left-width: 0.004em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.932em; vertical-align: -0.282em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-6">e_1 = e_2</script>. Một cách tổng quát hóa, quá trình đơn giản hóa là quá trình áp dụng các luật có dạng 
 <code>COND ==&gt; LHS = RHS</code>, tức là nếu điều kiện <code>COND</code> được thỏa thì ta sẽ thay thế biểu thức <code>LHS</code> bằng biểu thức <code>RHS</code>.</p></li>
 </ul>
 
-<p>Trong phần tiếp theo, ta sẽ đi vào chi tiết của chiến lược đơn giản hóa. Đây cũng chính là cấu thành quan trọng nhất đối với <em>interactive verification</em>.</p>
+<p>Trong phần tiếp theo, ta sẽ đi vào chi tiết của chiến lược đơn giản hóa. Đây là cấu thành quan trọng nhất đối với <em>interactive verification.</em></p>
 
 <h3 class="wmd-title" id="simplification">Simplification</h3>
 
@@ -237,12 +224,12 @@ tính ổn định của hệ thống thông qua việc thực hiện <em>regres
 
 <p>Có thể ví dụ các tiên đề số học sau:</p>
 
-<pre class="prettyprint prettyprinted" style=""><code><span class="pln">x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> x
-</span><span class="lit">0</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> x </span><span class="pun">=</span><span class="pln"> x
-</span><span class="lit">1</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> x </span><span class="pun">=</span><span class="pln"> x
-x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> x</span></code></pre>
+<p>x + 0 = x
+   0 + x = x <br>
+   1 * x = x
+   x * 1 = x</p>
 
-<p>Tất nhiên còn nhiều tiên đề khác có thể trở thành các rewrite rules.</p>
+<p>Nhiều tiên đề khác có thể trở thành các rewrite rules.</p>
 
 <h4 class="wmd-title" id="các-định-nghĩa-hàm">Các định nghĩa hàm</h4>
 
@@ -262,7 +249,9 @@ x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1
   </span><span class="kwd">case</span><span class="pln"> _ </span><span class="pun">=&gt;</span><span class="pln"> n </span><span class="pun">*</span><span class="pln"> factorial</span><span class="pun">(</span><span class="pln">n</span><span class="pun">-</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
 </span><span class="pun">}</span></code></pre>
 
-<p>Ta sẽ có được hai rewrite rules <code>(1) : n = 0 ==&gt; factorial(n) = 1</code> và <code>(2) n != 0 ==&gt; factorial(n) = n * factorial(n-1)</code></p>
+<p>Ta sẽ có được hai rewrite rules:
+  - <code>n = 0 ==&gt; factorial(n) = 1</code>
+  - <code>n != 0 ==&gt; factorial(n) = n * factorial(n-1)</code></p>
 
 <h4 class="wmd-title" id="các-hàm-được-đánh-dấu-trở-thành-rewrite-rule">Các hàm được đánh dấu trở thành rewrite rule</h4>
 
@@ -275,13 +264,13 @@ x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1
 
 <p>Hàm trên mô ta một hàm số mô tả một định lý rằng mọi danh sách khi nối liền với một danh sách rỗng thì luôn trả về chính danh sách ban đầu.</p>
 
-<p>Annotation @simp thông báo cho chúng ta biết rằng hàm này sẽ được dùng như một rewrite rule. Ở đây ta sẽ có rule <code>append(l, Nil()) = l</code></p>
+<p>Annotation <code>@simp</code> thông báo cho chúng ta biết rằng hàm này sẽ được dùng như một rewrite rule. Ở đây ta sẽ có rule <code>append(l, Nil()) = l</code></p>
 
 <h4 class="wmd-title" id="giả-thuyết-quy-nạp">Giả thuyết quy nạp</h4>
 
 <p>Một khi ta dùng chiến lược quy nạp để chứng minh một tính chất, ta sẽ được trả về hai mục tiêu con, tương ứng với bước cơ sở và bước qui nạp.</p>
 
-<p>Mục tiêu ở bước quy nạp sẽ có dạng <code>A ==&gt; B</code>, <code>A</code> được gọi là <em>giả thuyết quy nạp</em>.</p>
+<p>Mục tiêu ở bước quy nạp sẽ có dạng <code>A ==&gt; B</code>. Với <code>A</code> là <em>giả thuyết quy nạp</em>.</p>
 
 <p>Có thể nhận thấy trong khi chứng minh B, có có thể giả định là A đúng, và trong trường hợp A có dạng <code>LHS = RHS</code> hay nói cách khác là A có dạng của một rewrite rule, ta có thể dùng A như là một rewrite rule.</p>
 
@@ -291,7 +280,7 @@ x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1
 
 <h3 class="wmd-title" id="quá-trình-chứng-minh-tương-tác">Quá trình chứng minh tương tác</h3>
 
-<p>Bùn ngủ quá ;(</p>
+<p>[Có hình vẽ sẽ tốt hơn]</p>
 
 <p>Có thể mô tả quá trình tương tác giữa người dùng và hệ thống như sau:</p>
 
@@ -307,7 +296,9 @@ x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1
 
 <p>Bước 3: Người dùng mô tả thêm các hàm đóng vai trò là bổ đề cho việc chứng minh <code>simple_expr</code>. Quay lại bước 2.</p>
 
-<p>Quá trình tương tác này kết thúc chỉ khi tính chất được chứng minh là đúng, hoặc phản ví dụ được tìm ra mô tả hiện thực sai so với đặc tả.</p><h2 class="wmd-title" id="advanced-speed-up-techniques">Advanced speed up techniques</h2>
+<p>Quá trình tương tác này kết thúc chỉ khi tính chất được chứng minh là đúng, hoặc phản ví dụ chứng tỏ bản hiện thực sai so với đặc tả.</p>
+
+<h2 class="wmd-title" id="advanced-speedup-techniques">Advanced speedup techniques</h2>
 
 <h2 class="wmd-title" id="experiment-and-measurement">Experiment and Measurement</h2>
 
@@ -323,9 +314,21 @@ x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">1
 
 <h2 class="wmd-title" id="appendix-d-screen-shots">Appendix D - Screen shots</h2>
 
+<ul>
+<li>PURPOSE
+<ul><li>Luận văn này trở thành kiểu mẫu cho các luận văn kĩ sư về sau.</li>
+<li>Người đọc chỉ cần kiến thức cơ bản về Khoa học máy tính để có thể đọc hiểu hoàn toàn nội dùng của luận văn (self-contain)</li>
+<li>Ngôn ngữ đơn giản, gần gũi, dễ hiểu, dí dỏm</li>
+<li>Giọng văn riêng của tác giả, truyền tải kinh nghiệm có được trong quá trình làm luận văn</li>
+<li>Chi tiết đến mức tối đa có thể, tuy tốn nhiều thời gian nhưng kết quả mang lại sẽ rất tuyệt vời</li>
+<li>Như một quyển sách giáo khoa thường thức!</li>
+<li>Truyền tải nhiều thông tin thú vị về lịch sử nhân vật quan trọng trong ngành</li>
+<li>Làm cho người đọc hứng thú đọc, xem luận văn như một câu chuyện kể li lỳ và hấp dẫn</li>
+<li>Đưa người đọc đến thế giới tuyệt vời của logic học :-)</li></ul></li>
+</ul>
+
 <div class="footnotes"><hr><ol><li id="fn:formalmethods">de dam bao chuong trinh may tinh lam viec hoan toan dung so voi dac ta cua no ta khong the su dung phuong phep testing truyen thong - <a href="http://c2.com/cgi/wiki?TestsCantProveTheAbsenceOfBugs">http://c2.com/cgi/wiki?TestsCantProveTheAbsenceOfBugs</a> <a href="#fnref:formalmethods" title="Return to article" class="reversefootnote">↩</a></li><li id="fn:hg">Hilbert va Godel duoc coi la 2 trong 4 nha logic vi dai nhat tung song <a href="#fnref:hg" title="Return to article" class="reversefootnote">↩</a></li><li id="fn:dana">Nguoi dat giai Turing cho nhung dong gop ve Automata theory
-[fermat]: dinh ly duoc chung minh boi nha toan hoc ~ten trong khoang thoi gian 10 nam lam viec doc lap <a href="#fnref:dana" title="Return to article" class="reversefootnote">↩</a></li><li id="fn:proofasiss">la nhung chuong trinh may tinh ho tro nguoi dung trong chung minh <a href="#fnref:proofasiss" title="Return to article" class="reversefootnote">↩</a></li></ol></div>
-      </section>
+[fermat]: dinh ly duoc chung minh boi nha toan hoc ~ten trong khoang thoi gian 10 nam lam viec doc lap <a href="#fnref:dana" title="Return to article" class="reversefootnote">↩</a></li><li id="fn:proofasiss">la nhung chuong trinh may tinh ho tro nguoi dung trong chung minh <a href="#fnref:proofasiss" title="Return to article" class="reversefootnote">↩</a></li></ol></div>      </section>
 
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
